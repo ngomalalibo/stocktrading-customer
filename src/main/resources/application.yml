@@ -1,0 +1,48 @@
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: ${ZIPKIN_URI}
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+    stream:
+      bindings:
+        output:
+          destination: clientChangeTopic
+          content-type: application/json
+          group: stockGroup
+      kafka:
+        binder:
+          zkNodes: 18.195.186.89
+          brokers: 18.195.186.89
+
+#Setting the logging levels for the service
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.thoughtmechanix: DEBUG
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: 52.59.228.171:customer:8081
+    ip-address: 52.59.228.171
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URI}
+    enabled: true
+    region: eu-central-1
+server:
+  port: 8081
+security:
+  oauth2:
+    authorization:
+      check-token-access: isAuthenticated()
+    resource:
+      user-info-uri: ${AUTH_URI}
