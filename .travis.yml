@@ -13,7 +13,7 @@ notifications:
   on_success: always
   on_failure: always
 addons:
-  ssh_known_hosts: ec2-3-121-40-225.eu-central-1.compute.amazonaws.com
+  ssh_known_hosts: ec2-3-124-206-1.eu-central-1.compute.amazonaws.com
 before_install:
   - chmod +x mvnw
   - mvn clean install
@@ -23,7 +23,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-121-40-225.eu-central-1.compute.amazonaws.com
+  script: ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-124-206-1.eu-central-1.compute.amazonaws.com
     'bash launch_build.sh'
   on:
     branch: master
