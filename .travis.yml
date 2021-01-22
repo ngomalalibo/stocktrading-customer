@@ -12,44 +12,25 @@ notifications:
     - ngomalalibo@gmail.com
   on_success: always
   on_failure: always
-deploy:
-  - provider: codedeploy
-    wait-until-deployed: true
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    application: stocktrading_customer
-    deployment_group: stocktrading_group
-    region: eu-central-1
-    on:
-      branch: master
-branches:
-  only:
-    - master
 env:
   global:
+    - secure: cWZYL8kYtVYUwYxSaW44ZGa4ZTQLdXXUXmOD6UU2rOk08s98perKGOPrSm2Rgwpo15j7BD4Qnx+sefColFNcBC2QuPBNBfaeclHvpzfDSu2iipg51vs08gsslrja+4oT5V10uA2GVSMtnHKtaEktYt+9VsC7+GtKEtTLrnHQRvvwF5pYXB+UYBLDq1USjbTh73PuTse16FreAXOMqadTs6zZBULLMpeVlF/keybpnvdef9cuhxQv10yh/P8MyopNalMnGzDD4LE7y7xiEtY1A6PkSswpbRj83AqhQZ2iN5vlUndaCNhcmlWUKw1qFlb7FYDAQAbOba/Zz0FXVbp6zA3EYaksiiQnQ4VKPaGIdAq589OQFkUZ5cjDq4oA1OvwsSLcbQZ9OeUX9uSvjslvK0KeyLVyuMfyMPsBlVectShUJoBmz6mYipklKgIfeyiyVVCIyB1ofVbI54hHzldkLbzovkKTtwcG3Qno8ac7NvBBOSmOmlrZBCexKvZUL79Uhdfsq59+rNp04oPXdVScfdiTbupVrN2nBiIGd/+X2i9jyoSbkqcRsEclvkn32W2wVTNO5rHhzo7/Ivr7c7/mkC3s/b4/iOJWroMYiRLKh23u2dVEGRAmRJLhlzth5OU6nGPG5jr23FBXS1xRIq8XbaeJhGz61QXznPBj87IAwwA=
+    - secure: V50GKp0dbw5+ddxzEMk9NVvPqYGIK8TFQtyTvZNjnaf37AfdIcuR7FWQKS7GpjQ0fAol5Fu53lzR4wvBcdzsQTsR8eifbD4Bb6oPvAM7FkMJ586bPqN+AAX0Nk7Td5PbsakCB4MJnmj488Em3sYRThXWyMHEXM4BlJ3PU4rcpBQp3hfi83SMBgyp9VJknxQNWnkag5I9kkzEs0ujK/cbtiM7plkyZCDqK9YxKrXu2kBN4v92nZM/otKdXjmq1okZ6375Q+/fKbc+uU81Qer1vwwopZvkCsfgEiUCovvgKdszTR6jvBQiwh7BRhdQfAg7vrpJVUgsgBisNCxBd0jiOeAvfdH5xFhcCKEsyQhWu8uVFZjJmJcag6ZNUUfsWjydJmPZLJ2yNFQzGHbCYcg5aYnjFQl1L6ShCqvHwZxdxU3TTzsWYaEhFg0yJWc38Eqm0TQuzuS0fTXNwkwSVlTuDhn2a4cG7Ouzcaa3/n2XA35Et6utmLwutcBwDvSmeEiy4VSA5d/ZRTsmwSp0hMrfVrJ86DZ5kUaNcgaBEc6Bvujiecr9SYBEoSeC7PnUjOdzfVuGH8qOkLD9sGu9UG/D64NlcBsTWmN0+x+BdUh+lPg4AbcSNFMG0XNKVoDcy4DMWrqE8G4FiFzcP1zU0C+U3LQJqRr4QFYj08Afdar3xg8=
+    - secure: oI/KSEFGtVW4TbqgUQ1eDu2fLNPF2HXnuu4fQOf+fl8rdIMdoRWvyvqAIJTWUlJFv35pJOOizQCBJHvAO+KOmtuxo7pcjuJ7c8QYleinSOLYNaNEwglyePX6qCpJAEHHgB+YmzvuchOCPQ9ao1wWkVcZ59HkN+nktiX86rfP7BkKH8vYDD1cLA5+LsJpmHb9HW4yJH1gukqcIuN+7NnCdUjiodHTxIGVbTqQKIAgbiHu4FhLhZNWk7got0WTH7b1YfUz+k9pBhhu7FlRNGT2mBYivvOJKEhkz7UuG7A4ug6BVdVE8EJjN6KWNsXgWPvXVC1yaXrNFHn3SVliSQBQLXzMgmWsJekCLrFT/RnlqG03zZNaG0nuJLT2rTqW53IqJQK+A/+wA0E/1KVuftSht7wl1FQ6PVb6WF1tKMJ1R3WelbeecczFjHbhEMIZJX1rPoQFwpEiVdIJCKMaXGv/c3KfIn2N578PHmhw/ELgGwBSr1ky0YRy1yf/ALh/gXq/2DewMBx/KdUiIoLbyRe/Op7mKRKC2dL2IuyAneho5Le+nOYkYN7gWF0+DU2eXv216AdCIu2+yLpu8QWsD1LqMBgXKLbJ5vjDtpp3r1EOqZCwfFVMNjZVtbnHx8R4SoL4vZVPn3Kp0zPuvliCc/6rba8YjL27M5LYHX+VWELtAbw=
+    - secure: W9Yeg2hj+ytAS5r+p4AvWkrifkV9hMYngys66iHKoMLfrD7erx7cFc1MovGMCgUOIe0jOd/1mlxS05mELj+OvQxRzreVxJrI0vIkpQoBDipTVSEd7jYKohyvwb933gEKhEVze/2jBw6Ztm9wgXO1ytvaFpnftF39ILpaluAvWuX6ydDNMBukQCbdEX6bHN4tpZTzYWPdzeXtDSdY2j+E1AlTPL2fjasViBs8qrF3+ieqw5wsguHBQ2YcX6wSs72C4uvjjfix9GojZgjZ2vbGsT+pD6HTgmN5s+nTug+RTYM7ei//NoSW6oVmJYCHVniK7m5KWsarhhlGXIItM70AkU7uA194JOdJaZ9gsKD52eBO8/YVTXW8LFcmPII6kyfvYx6glYdcUm+GkEbU8eqb801J0+TH0yzayNWy/qrBXlmK/1rjjOFa8qWJT/4UCfKuTT2tXRxSV2P8saDnKoefm75W3KJDDrRXCdDf33q1ca9J1EwpA58s6+5vHsOIx0ZPRX6vSZH+gmtPp4WD4W1ZnQWtjTaOTtDCWczzXMtXxWVwEcdBzA7deim6yWXcLGvCWG/LpCFKyoTn8n+Jn47K20H3gcNCpiLHHRPdRn0gDBFkzhmJStEvyVN+SNb6Sl3uYHBwDqhdx2V27hzLBZ3DqfSrkd6PZ8t18W6GqEEdcGE=
+    - secure: Q0x54CwyNewE8czTYyfXormjhNAX036b9xunAawpf96Ynsl7X78lC7EoaOUjPFh7HHwYDjqLMfp8fMRY0Rmv04s1SnyJ/o2tmQXYRbyy5mK61EDW9b/iEqd1VHD8p7GhkiptznvbEvpQ4/GG5ttR1q1XJPOb+5QGGdKCbbBAMqYaITHjbswbtemSIgExk4CGKVfrmium+aGvAKFGvXsO5t1jQtn9z/OhF5AxrSWZ8gXYPfjp+FHd/BrTBs0WsIbbV8Iu6dM6l8n6weS11C9fZ4yoLx42V1EpbNOJgp6X0zouwA21WUvfliSLS+hNh9a30Z8AvwPwEqEVXNmMiusjFO+TxgW3TlMQTk8bQdE/3FicIUI7wBmP7sXRquRehWEns9cF7WUOdpLSoTkJ2ZL98uDI8UOFWKXV4JnDbcCBSoFVh1dreAyijEo7W1Hpe2UvIthj41M+EhlohMK5746qcqHgXZjNOct8sW7bkOZCiQUgmsETSS+itrG9ji4TsSYYY6e2HCITuZqeBZSGXB0PoIrKxU5XCQPWMuNph0hCNhz1KlJTDJ815PxyGaVj76xOlftGDlUnnfPc0fAUG/NJNcWy32JnkeoHt5XxRCYqoakMrYiuXYK043GkA0XBZYhYCTpQfkITWJouKpXAgyPjPGkDnFFoN9zDy5sRMipjXz4=
+addons:
+  ssh_known_hosts: ec2-3-121-40-225.eu-central-1.compute.amazonaws.com
 before_install:
-  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true
-  - sudo apt-get update
-  - gem install travis
-  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker-compose --version
-  - export BUILD_NAME=microservice-master-$(date -u "+%Y%m%d%H%M%S")
-  - export CONTAINER_IP=54.215.193.139
-
+  - chmod +x mvnw
+  - mvn clean install
+  - export BUILD_NAME=customer-master-$(date -u "+%Y%m%d%H%M%S")
 script:
   - sh travis_scripts/tag_build.sh
-  - echo "Launching $BUILD_NAME IN AMAZON ECS"
-  - scp -i all-stock-key-pair.pem C:/Users/Ngo/Documents/IntelliJProjects/microservices/customer/docker-compose.yml ubuntu@ec2-52-59-228-171.eu-central-1.compute.amazonaws.com:.
-  - docker container rm -f $(docker container ls -aq)
-  - docker image rm -f $(docker image ls -aq)
-  - docker-compose up -d
-  - docker-compose ps -a
-
-  #  =================================================================
-  #  - sh travis_scripts/build_services.sh
-  #  - sh travis_scripts/deploy_to_docker_hub.sh
-#  - sh travis_scripts/deploy_to_amazon_ecs.sh
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-121-40-225.eu-central-1.compute.amazonaws.com
+    'bash launch_build.sh'
+  on:
+    branch: master

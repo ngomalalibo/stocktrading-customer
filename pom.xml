@@ -253,7 +253,7 @@
                                 <argument>${env.DOCKER_NAME}</argument>
                                 <argument>-p</argument>
                                 <argument>${env.DOCKER_PASSWORD}</argument>
-                                <argument>registry-1.docker.io</argument>
+                                <argument>docker.io</argument>
                             </arguments>
                         </configuration>
                     </execution>

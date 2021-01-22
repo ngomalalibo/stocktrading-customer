@@ -16,8 +16,8 @@ spring:
           group: stockGroup
       kafka:
         binder:
-          zkNodes: 18.195.186.89
-          brokers: 18.195.186.89
+          zkNodes: 3.120.98.15
+          brokers: 3.120.98.15
 
 #Setting the logging levels for the service
 logging:
