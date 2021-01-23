@@ -181,6 +181,22 @@
             <version>8.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -199,7 +215,7 @@
                       Create new docker image using Dockerfile which must be present in current working directory.
                       Tag the image using maven project version information.
                     -->
-                    <!-- <execution>
+                     <execution>
                          <id>docker-build</id>
                          <phase>install</phase>
                          <goals>
@@ -210,7 +226,7 @@
                              <workingDirectory>${project.basedir}</workingDirectory>
                              <arguments>
                                  <argument>build</argument>
-                                 <argument>&#45;&#45;rm</argument>
+                                 <argument>--rm</argument>
                                  <argument>-t</argument>
                                  <argument>customer:latest</argument>
                                  <argument>.</argument>
@@ -218,7 +234,7 @@
                          </configuration>
                      </execution>
 
-                     &lt;!&ndash;Tag image&ndash;&gt;
+                     <!--Tag image-->
                      <execution>
                          <id>docker-tag</id>
                          <phase>install</phase>
@@ -237,7 +253,7 @@
                      </execution>
 
 
-                     &lt;!&ndash; Login and Push the image to a docker repo. &ndash;&gt;
+                     <!-- Login and Push the image to a docker repo. -->
                      <execution>
                          <id>docker-login</id>
                          <phase>install</phase>
@@ -271,7 +287,7 @@
                                  <argument>ngomalalibo/customer</argument>
                              </arguments>
                          </configuration>
-                     </execution>-->
+                     </execution>
                 </executions>
             </plugin>
         </plugins>

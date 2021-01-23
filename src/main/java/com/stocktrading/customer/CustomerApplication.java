@@ -33,7 +33,7 @@ public class CustomerApplication
         b.setAppname("customer");
         b.setNonSecurePort(8081);
         b.setAppname("customer");
-        b.setInstanceId("52.59.228.171:customer:8081");
+        b.setInstanceId("3.124.206.1:customer:8081");
         b.setPreferIpAddress(true);
         return b;
     }*/

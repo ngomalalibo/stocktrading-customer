@@ -17,3 +17,5 @@ services:
       ZIPKIN_URI: "http://18.156.118.22:9411"
       ZUUL_URI: "http://18.184.55.40:5555"
       BOOTSTRAP_SERVERS_CONFIG: "3.120.98.15:9092"
+      CUSTOMER_IP: 3-124-206-1
+      KAFKA_IP: 3.120.98.15

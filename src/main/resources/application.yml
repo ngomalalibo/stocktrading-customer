@@ -16,8 +16,8 @@ spring:
           group: stockGroup
       kafka:
         binder:
-          zkNodes: 3.120.98.15
-          brokers: 3.120.98.15
+          zkNodes: ${KAFKA_IP}
+          brokers: ${KAFKA_IP}
 
 #Setting the logging levels for the service
 logging:
@@ -29,8 +29,8 @@ logging:
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: 52.59.228.171:customer:8081
-    ip-address: 52.59.228.171
+    instance-id: ${CUSTOMER_IP}:customer:8081
+    ip-address: ${CUSTOMER_IP}
   client:
     register-with-eureka: true
     fetch-registry: true
