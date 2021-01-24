@@ -25,5 +25,5 @@ echo "Starting Zookeeper"
 #nohup $DAEMON_PATH/bin/kafka-server-start.sh -daemon $DAEMON_PATH/config/server.properties 2>/dev/null
 
 nohup $DAEMON_PATH/bin/zookeeper-server-start.sh $DAEMON_PATH/config/zookeeper.properties 2>/dev/null && \
-while ! nc -z localhost 2181; do sleep 0.1; done && \
+sleep 10 && \
 nohup $DAEMON_PATH/bin/kafka-server-start.sh $DAEMON_PATH/config/server.properties
