@@ -19,8 +19,8 @@ else
 fi
 # Start daemon.
 echo "Starting Zookeeper";
-nohup $DAEMON_PATH/bin/zookeeper-server-start.sh -daemon /$DAEMON_PATH/config/zookeeper.properties 2>/dev/null && \
+nohup $DAEMON_PATH/bin/zookeeper-server-start.sh -daemon /$DAEMON_PATH/config/zookeeper.properties 2>/dev/null &
   echo "Starting Kafka";
-nohup $DAEMON_PATH/bin/kafka-server-start.sh -daemon /$DAEMON_PATH/config/server.properties 2>/dev/null
+nohup $DAEMON_PATH/bin/kafka-server-start.sh -daemon /$DAEMON_PATH/config/server.properties 2>/dev/null &
 
 exit 0
