@@ -29,3 +29,4 @@ echo "Sleep for 10 seconds"
 sleep 10
 echo "Starting Kafka"
 nohup $DAEMON_PATH/bin/kafka-server-start.sh $DAEMON_PATH/config/server.properties &
+exit 0
