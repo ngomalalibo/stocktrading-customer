@@ -6,7 +6,7 @@ scp -i all-stock-key-pair.pem .env ubuntu@ec2-3-124-206-1.eu-central-1.compute.a
 scp -i all-stock-key-pair.pem travis_scripts/launch_build.sh ubuntu@ec2-3-124-206-1.eu-central-1.compute.amazonaws.com:.
 
 echo "Copying Kafka scripts to AWS Instance"
-Start Kafka
+#Start Kafka
 yes | scp -i all-stock-key-pair.pem travis_scripts/kafkainit.sh ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com:.
 echo "Starting Kafka and Zookeeper"
 ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com 'bash kafkainit.sh'
