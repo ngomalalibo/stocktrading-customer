@@ -11,8 +11,8 @@ yes | scp -i all-stock-key-pair.pem travis_scripts/kafkainit.sh ubuntu@ec2-3-120
 yes | scp -i all-stock-key-pair.pem travis_scripts/start_kafka.sh ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com:.
 echo "Starting Kafka and Zookeeper"
 ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com 'bash kafkainit.sh'
-echo "Going back to start Kafka>>>>>>"
-ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com 'sh start_kafka.sh'
+#echo "Going back to start Kafka>>>>>>"
+#ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com 'sh start_kafka.sh'
 echo "Started Kafka and Zookeeper"
 
 echo "Tagging build with $BUILD_NAME"
