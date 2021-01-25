@@ -8,9 +8,9 @@ scp -i all-stock-key-pair.pem travis_scripts/launch_build.sh ubuntu@ec2-3-124-20
 echo "Copying Kafka scripts to AWS Instance"
 #Start Kafka
 yes | scp -i all-stock-key-pair.pem travis_scripts/kafkainit.sh ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com:.
-echo "Starting Kafka and Zookeeper"
+
 ssh -i "all-stock-key-pair.pem" ubuntu@ec2-3-120-98-15.eu-central-1.compute.amazonaws.com 'bash kafkainit.sh'
-echo "Started Kafka and Zookeeper"
+echo "Kafka and Zookeeper started"
 
 echo "Tagging build with $BUILD_NAME"
 export TARGET_URL="https://api.github.com/repos/ngomalalibo/stocktradingmicroservices/releases?access_token=$GITHUB_TOKEN"
